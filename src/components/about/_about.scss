@@ -1,0 +1,119 @@
+@import "../../assets/fonts";
+@import "../../assets/breakpoints";
+
+.about-me {
+  width: 60vw;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: 35% 65%;
+  margin-top: 5vh;
+  margin-bottom: 6vh;
+  height: 400px;
+  @include smartphone-portrait {
+    width: 100%;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+  }
+
+  & img {
+    width: 19.72vw;
+    position: absolute;
+    max-width: 304px;
+    bottom: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @include tablets-portrait {
+      width: 256px;
+      height: 256px;
+      left: 60px;
+    }
+    @include smartphone-portrait {
+      width: 200px;
+      height: 200px;
+    }
+  }
+  &_img {
+    position: relative;
+    width: 100%;
+
+    height: 100%;
+    &::after {
+      position: absolute;
+      content: "";
+      clip-path: circle(50% at 50% 50%);
+      background-color: #464545;
+      width: 21.04vw;
+      height: 21.04vw;
+      bottom: 0;
+      left: -18px;
+      z-index: -1;
+      top: 63%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      @include desktop {
+        width: 367px;
+        height: 367px;
+      }
+      @include tablets-portrait {
+        width: 200px;
+        height: 200px;
+        left: 52px;
+      }
+      @include smartphone-portrait {
+        width: 150px;
+        height: 150px;
+      }
+    }
+  }
+}
+
+.about-me_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  & p:nth-child(1) {
+    @include font(700, 55px);
+    @include tablets-portrait {
+      font-size: 40px;
+    }
+    @include smartphone-portrait {
+      font-size: 25px;
+    }
+  }
+  & p:nth-child(2) {
+    @include font(400, 17px);
+    margin-left: 10px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    max-width: 600px;
+    @include tablets-portrait {
+      font-size: 15px;
+    }
+    @include smartphone-portrait {
+      font-size: 12px;
+    }
+  }
+  & a {
+    width: 246px;
+    line-height: 63px;
+    background: rgba(37, 37, 37, 0.85);
+    text-align: center;
+    @include font(400, 17px);
+    margin-left: 10px;
+    @include tablets-portrait {
+      font-size: 15px;
+      width: 150.18px;
+      line-height: 35.59px;
+    }
+    @include smartphone-portrait {
+      font-size: 12px;
+    }
+  }
+  @include smartphone-portrait {
+    margin-top: -35%;
+  }
+}

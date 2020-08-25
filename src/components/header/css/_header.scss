@@ -1,0 +1,16 @@
+@import "../../../assets/fonts";
+
+.header {
+  width: 100%;
+  background-color: #686464;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  &__title {
+    @include font(500, 30px);
+  }
+  &__subtitle {
+    @include font(400, 25px);
+    margin-top: 10px;
+  }
+}

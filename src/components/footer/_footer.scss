@@ -1,0 +1,89 @@
+@import "../../assets/fonts";
+@import "../../assets/breakpoints";
+
+@mixin title {
+  @include font(400, 25px);
+  margin-bottom: 19px;
+  @include smartphone-portrait {
+    margin-bottom: 10px;
+  }
+}
+@mixin sub_title {
+  @include font(300, 13px);
+}
+
+.footer {
+  background-color: #686464;
+  color: white;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  padding-top: 30px;
+  padding-bottom: 30px;
+  cursor: context-menu;
+  width: 100vw;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  & ul {
+    list-style: none;
+  }
+
+  &__about {
+    & p:nth-child(1) {
+      @include title();
+    }
+    & p:nth-child(2) {
+      @include sub_title();
+      margin-bottom: 25px;
+      width: 246px;
+      @include smartphone-portrait {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 15px;
+      }
+    }
+    & ul {
+      display: grid;
+      grid-template-columns: repeat(5, 20px);
+      grid-gap: 11px;
+      @include smartphone-portrait {
+        margin-left: 50%;
+        transform: translateX(-38%);
+      }
+    }
+  }
+  &__links {
+    & p {
+      @include title();
+    }
+    & li {
+      margin-bottom: 7px;
+      @include font(300, 17px);
+    }
+  }
+  &__contact {
+    & p {
+      @include title();
+    }
+    & li {
+      margin-bottom: 7px;
+      @include font(300, 17px);
+    }
+    & i {
+      margin-right: 10px;
+    }
+  }
+  &__projects {
+    & p {
+      @include title();
+    }
+  }
+  @include tablets-portrait {
+    grid-template-columns: repeat(2, auto);
+    grid-gap: 30px;
+  }
+  @include smartphone-portrait {
+    grid-template-columns: repeat(1, auto);
+    grid-gap: 30px;
+    text-align: center;
+  }
+}
